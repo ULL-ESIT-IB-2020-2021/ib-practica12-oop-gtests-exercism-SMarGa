@@ -6,16 +6,19 @@ class Complejo {
 
   public:
     Complejo() = default; 
-    Complejo(int real, int imaginaria);
-    int GetReal(){ return PReal_;}
-    int GetImaginaria(){ return PImgaginaria_;}
+    Complejo(double real, double imaginaria);
+    double GetReal(){ return PReal_;}
+    double GetImaginaria(){ return PImgaginaria_;}
     Complejo Add(Complejo a , Complejo b);
     Complejo Sub(Complejo a , Complejo b);
     void Print(Complejo a);
+    friend Complejo operator- ( Complejo Complejo1,  Complejo Complejo2);
+    friend Complejo operator- ( Complejo Complejo,  int Entero);
+    friend Complejo operator- ( Complejo Complejo,  double Real);
 
   private: 
-    int PReal_{0};
-    int PImgaginaria_{0};
+    double PReal_{0};
+    double PImgaginaria_{0};
 };
 
 #include"complejos.cc"
